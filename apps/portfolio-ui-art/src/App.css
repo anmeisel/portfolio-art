@@ -162,6 +162,7 @@ img.star6, img.star4 {
 
 .loading {
   height: calc(100vh - 8.5em);
+  margin-left: 1em;
   /* border: 1px solid black; */
 }
 
