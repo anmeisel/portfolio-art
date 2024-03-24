@@ -16,4 +16,4 @@ apps/**/dist/**
 # keys
 apps/portfolio-cms-art/sanity.cli.ts
 apps/portfolio-cms-art/sanity.config.ts
-apps/portfolio-ui-art/client.ts
+apps/portfolio-ui-art/src/client.js
