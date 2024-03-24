@@ -14,9 +14,9 @@ const Nav = ({ allPostsData }) => {
       {allPostsData &&
         allPostsData.map((post, index) => (
           <div className="index" key={index}>
-            {post.backgroundImage && (<div className="backgroundImage"><img src={post.backgroundImage.asset.url} alt=""/></div>)}
             <div id={post.slug.current} className="foreGround">
               <Link to={"/" + post.slug.current} key={post.slug.current}>
+                {post.backgroundImage && (<img className="backgroundImage" src={post.backgroundImage.asset.url} alt=""/>)}
                 <h2 key={index}>{post.title}</h2>
               </Link>
               <Link to={"/" + post.slug.current} key={post.slug.current}>
