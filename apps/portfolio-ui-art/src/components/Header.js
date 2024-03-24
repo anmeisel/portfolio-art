@@ -2,6 +2,16 @@ import React, { useEffect, useState } from "react";
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 
+const serializers = {
+  marks: {
+    link: (props) => (
+        <a target="_blank" href={props.mark.href} rel="noreferrer">
+            {props.children}
+        </a>
+    )
+  }
+}
+
 export default function Header() {
   const [header, setHeader] = useState(null);
   useEffect(() => {
@@ -26,7 +36,7 @@ export default function Header() {
 
   return (
     <div className="bio-content">
-      <BlockContent blocks={header.body}/>
+      <BlockContent blocks={header.body} serializers={serializers}/>
       <img className="me" src={header.mainImage}/>
     </div>
   );

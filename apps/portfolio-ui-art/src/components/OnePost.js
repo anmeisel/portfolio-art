@@ -5,6 +5,16 @@ import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
 import Nav from "./Nav.js";
 
+const serializers = {
+  marks: {
+    link: (props) => (
+        <a target="_blank" href={props.mark.href} rel="noreferrer">
+            {props.children}
+        </a>
+    )
+  }
+}
+
 export default function OnePost() {
   const [postData, setPostData] = useState(null);
   const { slug } = useParams();
@@ -101,7 +111,7 @@ export default function OnePost() {
           
           <div className="footer-3">{postData.year}</div>
           
-          <BlockContent className="body" blocks={postData.body}/>
+          <BlockContent className="body" blocks={postData.body} serializers={serializers}/>
           {postData.images && postData.images.map((image, imageIndex) => (
             <img className="little-image" key={imageIndex} src={image}/>
           ))}
