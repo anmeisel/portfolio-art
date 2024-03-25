@@ -175,9 +175,36 @@ img.star6, img.star4 {
 @media screen and (max-width: 600px) {
   .inner-h2 {
     margin-top: 1em;
+    max-width: calc(50vw - 1em);
+  }
+
+  .foreGround h2 {
+    margin-top: 0.3em;
+  }
+
+  a {
+    word-break: break-all;
   }
 
   .backgroundImage {
     margin-bottom: -30vh;
+  }
+
+  .bio-content {
+    display: block;
+  }
+
+  img.me {
+    width: 50%;
+    margin-left: 0;
+  }
+
+  img.main-image {
+    border-width: 8px;
+  }
+
+  img.backgroundImage {
+    margin-bottom: -150%;
+    height: calc(70vw);
   }
 }

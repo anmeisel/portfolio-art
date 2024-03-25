@@ -75,9 +75,11 @@ export default function OnePost() {
   }, [slug, pageLoaded]);
 
   const scrollToId = (id) => {
+    const text = document.getElementsByClassName("one-post");
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView();
+      text.scrollIntoView()
     }
   };
 
